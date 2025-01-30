@@ -25,6 +25,10 @@ def save_object(file_path, obj):
         raise CustomException(e, sys)
     
 def evaluate_models(X_train, y_train, X_test, y_test, models, params):
+    """
+    This function is used to train and evaluate the model with different
+    regression algorithms and parameters
+    """
     try:
         report = {}
         
@@ -56,6 +60,9 @@ def evaluate_models(X_train, y_train, X_test, y_test, models, params):
         raise CustomException(e, sys)
     
 def load_model(file_path):
+    """
+    This function is used to load the object from the specified file path
+    """
     try:
         with open(file_path, 'rb') as file:
             return dill.load(file)
